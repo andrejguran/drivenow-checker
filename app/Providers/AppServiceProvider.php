@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace DriveNowChecker\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

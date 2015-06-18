@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace DriveNowChecker\Http\Controllers\Auth;
 
-use App\User;
+use DriveNowChecker\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use DriveNowChecker\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller

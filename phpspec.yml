@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: DriveNowChecker
+        psr4_prefix: DriveNowChecker
         src_path: app
