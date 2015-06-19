@@ -39,13 +39,25 @@
             .quote {
                 font-size: 24px;
             }
+
+            a {
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: #B0BEC5;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="quote">{{ Inspiring::quote() }}</div>
+                <div class="title">Drive now checker</div>
+                <div class="quote">
+                    Please <a href="{{ action('Auth\AuthController@getLogin') }}">Log in</a>
+                    or <a href="{{ action('Auth\AuthController@getRegister') }}">Register</a>
+                </div>
             </div>
         </div>
     </body>

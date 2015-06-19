@@ -15,12 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::get('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('/home', 'HomeController@index');
+Route::get('settings', ['as' => 'settings', 'uses' => 'HomeController@settings']);
+Route::post('settings', 'HomeController@postSettings');
+
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('/check/{id}', ['as' => 'check', 'uses' => 'HomeController@check']);
+
+Route::post('/watcher', 'HomeController@createWatcher');
+
+Route::get('/toggle/{id}', 'HomeController@toggle');
+Route::get('/delete/{id}', 'HomeController@delete');

@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \DriveNowChecker\Console\Commands\Inspire::class,
+        \DriveNowChecker\Console\Commands\ScheduleWatchers::class
     ];
 
     /**
