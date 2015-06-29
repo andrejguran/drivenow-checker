@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fcaadfbd-2d52-4aa6-be0c-660e88c19b0a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.openshift/nginx.conf.erb" afterPath="$PROJECT_DIR$/.openshift/nginx.conf.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="drivenow-checker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,8 +92,8 @@
       <file leaf-file-name="nginx.conf.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.openshift/nginx.conf.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3289474" vertical-offset="92" max-vertical-offset="1250">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.8355263" vertical-offset="1092" max-vertical-offset="1825">
+              <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -1171,8 +1170,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.openshift/nginx.conf.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3289474" vertical-offset="92" max-vertical-offset="1250">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.8355263" vertical-offset="1092" max-vertical-offset="1825">
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
           <folding />
         </state>
       </provider>
