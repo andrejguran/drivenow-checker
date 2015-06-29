@@ -77,7 +77,7 @@ class Checker {
     protected function storeCityCars($city)
     {
         if (isset($cars[$city])) return;
-        $apiKey = Config::get('drivenowchecker.drivenow-api-key');
+        $apiKey = isset(Auth::uset()->api_key) ? Auth::uset()->api_key : Config::get('drivenowchecker.drivenow-api-key');
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,"https://api2.drive-now.com/cities/{$city}?expand=full");

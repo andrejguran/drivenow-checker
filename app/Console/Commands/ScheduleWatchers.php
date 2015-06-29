@@ -41,7 +41,8 @@ class ScheduleWatchers extends Command
     public function handle()
     {
         $checker = new Checker();
-        foreach (Watcher::with('user')->get() as $watcher) {
+
+        foreach (Watcher::with('user')->where('on', true)->get() as $watcher) {
             echo "watcher: " . ($checker->check($watcher) ? 'yes' : 'no') . "\n";
         }
 
