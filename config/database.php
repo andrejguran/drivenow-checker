@@ -85,6 +85,18 @@ return [
             'prefix'   => '',
         ],
 
+        'openshift' => [
+            'driver'    => 'mysql',
+            'host'      => env('OPENSHIFT_MYSQL_DB_HOST'),
+            'database'  => env('OPENSHIFT_APP_NAME'),
+            'username'  => env('OPENSHIFT_MYSQL_DB_USERNAME'),
+            'password'  => env('OPENSHIFT_MYSQL_DB_PASSWORD'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ]
+
     ],
 
     /*
