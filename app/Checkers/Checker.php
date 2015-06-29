@@ -16,7 +16,9 @@ class Checker {
 
         $cars = $this->getCars($watcher);
 
-        $this->mailCars($cars, $watcher);
+        if (count($cars) > 0) {
+            $this->mailCars($cars, $watcher);
+        }
 
         $watcher->last_check = $this->now();
         $watcher->save();
@@ -162,7 +164,13 @@ class Checker {
         $googleApiKey = Config::get('drivenowchecker.google-api-key');
         $url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=".urlencode($watcher['address'])."&destinations=".urlencode($carsCoordinates)."&sensor=false&key={$googleApiKey}";
         $json = json_decode(file_get_contents($url));
+
+        if (!isset($json->rows[0])) {
+            return [];
+        }
+
         $carsDistances = [];
+
         foreach ($json->rows[0]->elements as $distance) {
             $carsDistances[] = (int)$distance->duration->value;
         }

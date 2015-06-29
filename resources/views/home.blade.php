@@ -10,7 +10,7 @@
                   <th>#</th>
                   <th>Check period</th>
                   <th>Address</th>
-                  <th>Min. fuel level</th>
+                  <th>Max. fuel level</th>
                   <th>Model name</th>
                   <th>Fuel type</th>
                   <th>Max walking distance</th>
@@ -27,7 +27,7 @@
                   <th scope="row">{{ ++$i }}</th>
                   <td>{{ $watcher->refresh_period / 60}}min</td>
                   <td>{{ $watcher->address }}</td>
-                  <td>{{ $watcher->fuel_level }}</td>
+                  <td>{{ $watcher->fuel_level }}%</td>
                   <td>{{ $watcher->model_name or 'any' }}</td>
                   <td>{{ $watcher->fuel_type or 'any' }}</td>
                   <td>{{ $watcher->distance }}min</td>
