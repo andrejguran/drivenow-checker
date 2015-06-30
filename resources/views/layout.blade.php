@@ -67,7 +67,7 @@
           <hr>
 
           <footer>
-            <p>© <a href="http://github.com/andrejguran">andrejguran</a></p>
+            <p>© <a href="https://github.com/andrejguran/drivenow-checker">andrejguran</a></p>
           </footer>
         </div> <!-- /container -->
 
