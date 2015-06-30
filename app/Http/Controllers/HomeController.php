@@ -31,12 +31,9 @@ class HomeController extends Controller {
     {
         $this->middleware('auth');
     }
-    /**
-     * Show the application dashboard to the user.
-     *
-     * @return Response
-     */
-    public function index()
+
+
+    public function index(\Illuminate\Http\Request $request)
     {
         $watchers = Watcher::where('user_id', Auth::user()->id)->get();
         return view('home', compact('watchers'));
@@ -49,12 +46,18 @@ class HomeController extends Controller {
 
     public function postSettings(\Illuminate\Http\Request $request)
     {
+        $update = [
+            'email' => $request->input('email'),
+            'city' => $request->input('city')
+        ];
+
+        if ($request->input('password')) {
+            $update['password'] = bcrypt($request->input('password'));
+        }
+
         DB::table('users')
             ->where('id', Auth::user()->id)
-            ->update([
-                'api_key' => $request->input('api_key'),
-                'city' => $request->input('city')
-            ]);
+            ->update($update);
 
         $request->session()->flash('info', ['Edit was successful!']);
 
@@ -88,11 +91,26 @@ class HomeController extends Controller {
         return redirect('/home');
     }
 
-    public function toggle($id)
+    public function toggle($id, \Illuminate\Http\Request $request)
     {
         $watcher = Watcher::find($id);
 
         $watcher->on = !$watcher->on;
+
+        $request->session()->flash('info', ["Watcher turned ". ($watcher->on ? 'on' : 'off') ."!"]);
+
+        $watcher->save();
+
+        return redirect('/home');
+    }
+
+    public function off($id, \Illuminate\Http\Request $request)
+    {
+        $watcher = Watcher::find($id);
+
+        $watcher->on = false;
+
+        $request->session()->flash('info', ["Watcher turned ". ($watcher->on ? 'on' : 'off') ."!"]);
 
         $watcher->save();
 

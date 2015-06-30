@@ -12,6 +12,9 @@
 */
 
 Route::get('/', function () {
+    if (Auth::user()) {
+        return redirect('/home');
+    }
     return view('welcome');
 });
 
@@ -32,4 +35,5 @@ Route::get('/check/{id}', ['as' => 'check', 'uses' => 'HomeController@check']);
 Route::post('/watcher', 'HomeController@createWatcher');
 
 Route::get('/toggle/{id}', 'HomeController@toggle');
+Route::get('/off/{id}', 'HomeController@off');
 Route::get('/delete/{id}', 'HomeController@delete');

@@ -1,4 +1,4 @@
-<h2>Found {{ count($cars) }} cars in {{ $watcher->distance }}min walking distance</h2>
+<h2>Found {{ count($cars) }} cars in {{ $watcher->distance }}min walking distance from {{ $watcher->address }}</h2>
 <table class="table table-striped">
     <thead>
         <tr>

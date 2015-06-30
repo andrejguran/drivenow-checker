@@ -77,7 +77,7 @@ class Checker {
     protected function storeCityCars($city)
     {
         if (isset($cars[$city])) return;
-        $apiKey = isset(Auth::user()->api_key) ? Auth::user()->api_key : Config::get('drivenowchecker.drivenow-api-key');
+        $apiKey = Config::get('drivenowchecker.drivenow-api-key');
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,"https://api2.drive-now.com/cities/{$city}?expand=full");
@@ -157,12 +157,14 @@ class Checker {
 
     public static function googleDistanceFilterCars($watcher, $cars)
     {
+        $cars = array_slice($cars, 0, 80); //max google allows
         $carsCoordinates = implode('|',array_map(function($car){
             return $car['latitude'].','.$car['longitude'];
         }, $cars));
 
         $googleApiKey = Config::get('drivenowchecker.google-api-key');
         $url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=".urlencode($watcher['address'])."&destinations=".urlencode($carsCoordinates)."&sensor=false&key={$googleApiKey}";
+
         $json = json_decode(file_get_contents($url));
 
         if (!isset($json->rows[0])) {

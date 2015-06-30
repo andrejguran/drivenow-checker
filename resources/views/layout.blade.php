@@ -67,7 +67,7 @@
           <hr>
 
           <footer>
-            <p>© Company 2014</p>
+            <p>© <a href="http://github.com/andrejguran">andrejguran</a></p>
           </footer>
         </div> <!-- /container -->
 

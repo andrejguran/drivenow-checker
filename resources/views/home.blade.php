@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('content')
-    <p>Welcome home</p>
     <h2>Watchers</h2>
 
         <table class="table table-hover">

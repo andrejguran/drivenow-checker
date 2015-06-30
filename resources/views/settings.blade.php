@@ -4,7 +4,8 @@
     <form class="form-signin" method="POST" action="/settings">
             {!! csrf_field() !!}
             <h2 class="form-signin-heading">Edit your settings</h2>
-            <input type="text" placeholder="Api-key" name="api_key" class="form-control" value="{{ Auth::user()->api_key }}">
+            <input type="text" placeholder="Email" name="email" class="form-control" value="{{ Auth::user()->email }}">
+            <input type="password" placeholder="Password" name="password" class="form-control">
             <select class="form-control" name="city">
                 @foreach(\DriveNowChecker\Watcher::$cities as $index => $city)
                     <option
